@@ -9,7 +9,7 @@ module.exports = {
   theme: {
     extend: {
       colors: {
-        primary: colors.cyan,
+        primary: colors.rose,
       },
       fontFamily: {
         mono: [...defaultTheme.fontFamily.mono],

@@ -1,4 +1,14 @@
+github.com/go-chi/chi/v5 v5.0.12 h1:9euLV5sTrTNTRUU9POmDUvfxyj6LAABLUcEWO+JJb4s=
+github.com/go-chi/chi/v5 v5.0.12/go.mod h1:DslCQbL2OYiznFReuXYUmQ2hGd1aDpCnlMNITLSKoi8=
+github.com/maragudk/gomponents v0.20.2 h1:39FhnBNNCJzqNcD9Hmvp/5xj0otweFoyvVgFG6kXoy0=
+github.com/maragudk/gomponents v0.20.2/go.mod h1:nHkNnZL6ODgMBeJhrZjkMHVvNdoYsfmpKB2/hjdQ0Hg=
+github.com/maragudk/httph v0.2.1 h1:R8gRRwp6qZZBETdi+KyZ4EG3lFNpQWEYY4uVKaWd47o=
+github.com/maragudk/httph v0.2.1/go.mod h1:6ziUCAYyAph3FFgtg0B7Uo3ySs/8qSt2WWkYYjmYZCQ=
 github.com/maragudk/is v0.1.0 h1:obq9anZNmOYcaNbeT0LMyjIexdNeYTw/TLAPD/BnZHA=
 github.com/maragudk/is v0.1.0/go.mod h1:W/r6+TpnISu+a88OLXQy5JQGCOhXQXXLD2e5b4xMn5c=
 github.com/maragudk/snorkel v0.2.0 h1:wohTw6n2kjNZTJFLm+bxgIf18jxr5NdhrpZ+JQfRUjU=
 github.com/maragudk/snorkel v0.2.0/go.mod h1:HJG+MdTdlXasD5FAN8wGjhiwLiAWuv097Z2gVzYKeBQ=
+github.com/mitchellh/mapstructure v1.5.0 h1:jeMsZIYE/09sWLaz43PL7Gy6RuMjD2eJVyuac5Z2hdY=
+github.com/mitchellh/mapstructure v1.5.0/go.mod h1:bFUtVrKA4DC2yAKiSyO/QUcy7e+RRV2QTWOzhPopBRo=
+golang.org/x/sync v0.7.0 h1:YsImfSBoP9QPYL0xyKJPq0gcaJdG3rInoqxTWbfQu9M=
+golang.org/x/sync v0.7.0/go.mod h1:Czt+wKu1gCyEFDUtn0jG5QVvpJ6rzVqr5aXyt9drQfk=
