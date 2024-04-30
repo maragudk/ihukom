@@ -1,16 +1,17 @@
 package main
 
 import (
-	"log/slog"
+	"github.com/maragudk/snorkel"
 )
 
 func main() {
-	if err := start(); err != nil {
-		slog.Info("Error starting:", "error", err)
+	logger := snorkel.New(snorkel.Options{})
+	if err := start(logger); err != nil {
+		logger.Log("Error starting", 1, "error", err)
 	}
 }
 
-func start() error {
-	slog.Info("Starting")
+func start(logger *snorkel.Logger) error {
+	logger.Log("Starting", 1)
 	return nil
 }
