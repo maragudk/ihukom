@@ -30,6 +30,11 @@ func Home(mux chi.Router, db noteGetter) {
 			http.Error(w, err.Error(), http.StatusInternalServerError)
 			return html.ErrorPage(), err
 		}
+
+		if hxhttp.IsRequest(r.Header) && !hxhttp.IsBoosted(r.Header) {
+			return html.NotesPartial(notes), nil
+		}
+
 		return html.HomePage(html.PageProps{Title: "Home", Description: ""}, notes), nil
 	}))
 }

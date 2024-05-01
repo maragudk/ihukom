@@ -12,24 +12,29 @@ import (
 
 func HomePage(props PageProps, notes []model.Note) g.Node {
 	return page(props,
-		Div(ID("notes"),
-			//hx.Get("/notes"), hx.Trigger("every 5s"),
-			Ol(Class("grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 xl:grid-cols-5 gap-4 text-[8px] sm:text-[10px]"),
-				Li(A(hx.Post("/notes"),
+		Div(hx.Get("/"), hx.Trigger("every 2s"),
+			NotesPartial(notes),
+		),
+	)
+}
+
+func NotesPartial(notes []model.Note) g.Node {
+	return Div(ID("notes"),
+		Ol(Class("grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 xl:grid-cols-5 gap-4 text-[8px] sm:text-[10px]"),
+			Li(A(hx.Post("/notes"),
+				card(
+					Div(Class("h-64 cursor-pointer flex justify-center items-center"), solid.Plus(Class("w-12 h-12"))),
+				),
+			)),
+			g.Group(g.Map(notes, func(n model.Note) g.Node {
+				return Li(A(Href("/notes?id="+n.ID.String()), hx.Boost("true"),
 					card(
-						Div(Class("h-64 cursor-pointer flex justify-center items-center"), solid.Plus(Class("w-12 h-12"))),
-					),
-				)),
-				g.Group(g.Map(notes, func(n model.Note) g.Node {
-					return Li(A(Href("/notes?id="+n.ID.String()), hx.Boost("true"),
-						card(
-							Div(Class("whitespace-pre-wrap font-serif h-64 overflow-hidden"),
-								g.Text(n.Content),
-							),
+						Div(Class("whitespace-pre-wrap font-serif h-64 overflow-hidden"),
+							g.Text(n.Content),
 						),
-					))
-				})),
-			),
+					),
+				))
+			})),
 		),
 	)
 }
