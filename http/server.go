@@ -31,7 +31,7 @@ func NewServer(opts NewServerOptions) *Server {
 		log: opts.Log,
 		mux: mux,
 		server: &http.Server{
-			Addr:              "localhost:8080",
+			Addr:              ":8080",
 			Handler:           mux,
 			ReadTimeout:       5 * time.Second,
 			ReadHeaderTimeout: 5 * time.Second,
