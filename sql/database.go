@@ -2,13 +2,11 @@ package sql
 
 import (
 	"context"
-	"database/sql"
 	"embed"
 	"io/fs"
 	"time"
 
 	"github.com/jmoiron/sqlx"
-	"github.com/maragudk/errors"
 	"github.com/maragudk/migrate"
 	"github.com/maragudk/snorkel"
 	_ "github.com/mattn/go-sqlite3"
@@ -52,35 +50,6 @@ func (d *Database) Connect() error {
 	}
 
 	return nil
-}
-
-// inTransaction runs callback in a transaction, and makes sure to handle rollbacks, commits etc.
-func (d *Database) inTransaction(ctx context.Context, callback func(tx *sqlx.Tx) error) (err error) {
-	tx, err := d.DB.BeginTxx(ctx, &sql.TxOptions{Isolation: sql.LevelSerializable})
-	if err != nil {
-		return errors.Wrap(err, "error beginning transaction")
-	}
-	defer func() {
-		if rec := recover(); rec != nil {
-			err = rollback(tx, errors.Newf("panic: %v", rec))
-		}
-	}()
-	if err := callback(tx); err != nil {
-		return rollback(tx, err)
-	}
-	if err := tx.Commit(); err != nil {
-		return errors.Wrap(err, "error committing transaction")
-	}
-
-	return nil
-}
-
-// rollback a transaction, handling both the original error and any transaction rollback errors.
-func rollback(tx *sqlx.Tx, err error) error {
-	if txErr := tx.Rollback(); txErr != nil {
-		return errors.Wrap(err, "error rolling back transaction after error (transaction error: %v), original error", txErr)
-	}
-	return err
 }
 
 //go:embed migrations
