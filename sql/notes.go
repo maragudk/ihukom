@@ -11,7 +11,7 @@ import (
 
 func (d *Database) GetNotes(ctx context.Context) ([]model.Note, error) {
 	var notes []model.Note
-	err := d.DB.SelectContext(ctx, &notes, `select * from notes order by updated desc`)
+	err := d.DB.SelectContext(ctx, &notes, `select * from notes order by created desc`)
 	return notes, err
 }
 
