@@ -26,7 +26,8 @@ func (s *Server) setupRoutes() {
 			}))
 			r.Use(middleware.SetHeader("Content-Type", "text/html; charset=utf-8"))
 
-			Home(r)
+			Home(r, s.db)
+			Notes(r, s.db)
 		})
 	})
 }
