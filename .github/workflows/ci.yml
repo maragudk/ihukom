@@ -15,7 +15,7 @@ concurrency:
 jobs:
   build:
     name: Build
-    runs-on: arm64-beta
+    runs-on: arm64-beta-2
 
     steps:
       - name: Setup QEMU
