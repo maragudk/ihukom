@@ -3,7 +3,7 @@ module github.com/maragudk/ihukom
 go 1.22
 
 require (
-	github.com/go-chi/chi/v5 v5.0.12
+	github.com/go-chi/chi/v5 v5.0.14
 	github.com/jmoiron/sqlx v1.4.0
 	github.com/maragudk/env v0.1.3
 	github.com/maragudk/errors v0.1.1
