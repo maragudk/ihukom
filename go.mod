@@ -7,7 +7,7 @@ require (
 	github.com/jmoiron/sqlx v1.4.0
 	github.com/maragudk/env v0.1.3
 	github.com/maragudk/errors v0.1.1
-	github.com/maragudk/gomponents v0.20.3
+	github.com/maragudk/gomponents v0.20.4
 	github.com/maragudk/gomponents-heroicons/v2 v2.0.0
 	github.com/maragudk/gomponents-htmx v0.5.0
 	github.com/maragudk/httph v0.2.1
