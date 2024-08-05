@@ -15,7 +15,7 @@ require (
 	github.com/maragudk/migrate v0.4.3
 	github.com/maragudk/snorkel v0.3.0
 	github.com/mattn/go-sqlite3 v1.14.22
-	golang.org/x/sync v0.7.0
+	golang.org/x/sync v0.8.0
 )
 
 require github.com/mitchellh/mapstructure v1.5.0 // indirect
