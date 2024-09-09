@@ -14,7 +14,7 @@ require (
 	github.com/maragudk/is v0.1.0
 	github.com/maragudk/migrate v0.4.3
 	github.com/maragudk/snorkel v0.3.0
-	github.com/mattn/go-sqlite3 v1.14.22
+	github.com/mattn/go-sqlite3 v1.14.23
 	golang.org/x/sync v0.7.0
 )
 
